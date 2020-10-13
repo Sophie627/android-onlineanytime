@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Online-Anytime</string>
+
+<!--    side_menu-->
+    <string name="course"> My courses</string>
+    <string name="setting">Setting</string>
+    <string name="logout">Log out</string>
+    <string name="header_title">Dashboard</string>
+
+<!--    login page-->
+    <string name="email_hint">Email address</string>
+    <string name="pass_hint">Password</string>
+    <string name="login_button">SIGN IN</string>
+    <string name="login_forget">Forgot login details, new enrolment, or inquiry</string>
+    <string name="entry_info_login">Enter your Email and Password to login</string>
+    <string name="retry_info_login">Oops, can`t login! please try to login again.</string>
+
+    <!--    forget page-->
+    <string name="forget_button">FORGOT</string>
+    <string name="forget_signin">Sign in</string>
+    <string name="forget_display">We will send the link for reset password to your email</string>
+    <string name="code_title">Verification code</string>
+    <string name="code_des">Please type the verification code.</string>
+    <string name="code_btn">Continue</string>
+
+<!--    main activity-->
+    <string name="main_title">Form submission</string>
+    <string name="loading">Loading・・・</string>
+
+
+    <string name="bottom_sheet_option_camera">Use Camera</string>
+    <string name="bottom_sheet_option_gallery">Upload from Gallery</string>
+    <string name="bottom_sheet_option_heading">Add Photo</string>
+
+    <string name="success">Success! Your submission has been saved!</string>
+    <string name="send_faild">It is currently offline. All data saved local stroage.</string>
+    <string name="offline_text">It is currently offline.</string>
+    <string name="noData_text">There are no data.</string>
+</resources>

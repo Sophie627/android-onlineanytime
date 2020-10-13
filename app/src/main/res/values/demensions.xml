@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="textsize_title">6dp</dimen>
+    <dimen name="textsize_header">5dp</dimen>
+    <dimen name="textsize_normal">4dp</dimen>
+    <dimen name="matrix_normal">3dp</dimen>
+
+    <dimen name="dp_8">8dp</dimen>
+    <dimen name="dp_10">10dp</dimen>
+    <dimen name="dp_16">16dp</dimen>
+    <dimen name="dp_32">32dp</dimen>
+    <dimen name="dp_48">48dp</dimen>
+    <dimen name="dp_56">56dp</dimen>
+
+    <dimen name="md_bottom_sheet_separator_top_margin">7dp</dimen>
+    <dimen tools:override="true" name="design_navigation_icon_padding">1dp</dimen>
+    <dimen name="design_navigation_icon_size" override="true">20dp</dimen>
+</resources>

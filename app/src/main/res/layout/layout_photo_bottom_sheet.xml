@@ -1,0 +1,59 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dp_8"
+    android:layout_marginTop="@dimen/dp_8"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_56"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_16"
+        android:gravity="center"
+        android:text="@string/bottom_sheet_option_heading"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_btn_add_photo_camera"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_16"
+        android:backgroundTint="@android:color/white"
+        android:drawablePadding="@dimen/dp_32"
+        android:drawableStart="@drawable/ic_add_a_photo"
+        android:drawableTint="@color/colorPrimaryDark"
+        android:gravity="start|center_vertical"
+        android:text="@string/bottom_sheet_option_camera"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
+        android:drawableLeft="@drawable/ic_add_a_photo" />
+
+    <TextView
+        android:id="@+id/tv_btn_add_photo_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_16"
+        android:backgroundTint="@android:color/white"
+        android:drawablePadding="@dimen/dp_32"
+        android:drawableStart="@drawable/ic_gallery_photo"
+        android:drawableTint="@color/colorPrimaryDark"
+        android:gravity="start|center_vertical"
+        android:text="@string/bottom_sheet_option_gallery"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
+        android:drawableLeft="@drawable/ic_gallery_photo" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="@dimen/dp_8"
+
+        android:layout_marginTop="@dimen/md_bottom_sheet_separator_top_margin"
+        android:background="@color/colorPrimaryDark" />
+
+</LinearLayout>

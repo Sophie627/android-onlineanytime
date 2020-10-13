@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionMenuTextColor">@android:color/holo_green_light</item>
+    </style>
+
+
+    <style name="NavigationViewStyle">
+        <item name="android:textSize">16dp</item> <!-- menu item text size-->
+        <item name="android:listPreferredItemHeightSmall">45dp</item><!-- menu item height-->
+
+    </style>
+
+</resources>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.austraila.online_anytime">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.webkit.PermissionRequest" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:largeHeap="true"
+        android:usesCleartextTraffic="true">
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".activitys.LoginDepartment.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="nosensor" />
+
+        <activity android:name=".activitys.LoginDepartment.ForgetActivity" />
+        <activity android:name=".activitys.MainActivity"
+            android:screenOrientation="nosensor"/>
+        <activity android:name=".activitys.EachItemActivity"
+            android:screenOrientation="nosensor"/>
+        <activity android:name=".activitys.FormActivity"
+            android:screenOrientation="nosensor"/>
+        <activity android:name=".activitys.SettingActivity"
+            android:screenOrientation="nosensor"/>
+        <activity android:name=".activitys.cameraActivity.CameraActivity" />
+        <activity android:name=".activitys.SuccessActivity"
+            android:screenOrientation="nosensor"/>
+        <activity android:name=".activitys.LoginDepartment.NewRegisterActivity"
+            android:screenOrientation="nosensor"/>
+
+        <activity android:name=".activitys.SplashActivity"
+            android:screenOrientation="nosensor">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+
+        android:background="@color/colorBackground">
+        <TextView
+            android:id="@+id/back_textview"
+            android:layout_width="25dp"
+            android:layout_height="18dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/back_icon"
+            android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:id="@+id/headerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_title"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white_color"/>
+
+        <TextView
+            android:id="@+id/next_textBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:textColor="@color/white_color"
+            android:textSize="16dp"
+            android:layout_marginRight="20dp"
+            android:textStyle="bold"
+            android:text="Next"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.austraila.online_anytime.Common.CustomScrollview
+        android:id="@+id/scrollmain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        </LinearLayout>
+
+    </com.austraila.online_anytime.Common.CustomScrollview>
+
+    <RelativeLayout
+        android:id="@+id/FloadingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="10dp"
+        android:visibility="gone"
+        android:background="@color/half_transfer">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/border_loding"
+            android:padding="20dp">
+
+            <ProgressBar
+                android:id="@+id/loading_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/black"
+                android:indeterminateTintMode="src_atop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/loading_spinner"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="@string/loading"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
+
