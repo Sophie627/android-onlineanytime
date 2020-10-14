@@ -2,8 +2,10 @@ package com.austraila.online_anytime.Common;
 
 import android.content.ContentResolver;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -65,9 +67,10 @@ public class AddPhotoBottomDialogFragment extends BottomSheetDialogFragment{
         localIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent chooseFile = new Intent(Intent.ACTION_GET_CONTENT);
-                chooseFile.setType("*/*");
-                chooseFile = Intent.createChooser(chooseFile, "Choose a file");
+//                Intent chooseFile = new Intent(Intent.ACTION_GET_CONTENT);
+                Intent chooseFile = new Intent(Intent.ACTION_PICK);
+                chooseFile.setType("image/*");
+//                chooseFile = Intent.createChooser(chooseFile, "Choose a file");
                 startActivityForResult(chooseFile, 7);
             }
         });
@@ -85,20 +88,38 @@ public class AddPhotoBottomDialogFragment extends BottomSheetDialogFragment{
         switch(requestCode){
             case 7:
                 if(resultCode==RESULT_OK){
+                    String[] filePathColumn = { MediaStore.Images.Media.DATA };
                     Uri uri = data.getData();
                     String src = uri.getPath();
 
                     Uri PathHolder = data.getData();
                     File file = new File(PathHolder.getPath());
                     String path = file.getAbsolutePath();
+                    path = getRealPathFromURI(this.getContext(), PathHolder);
                     Intent intent = new Intent(getActivity(), FormActivity.class);
-                    intent.putExtra("filepath", src);
+                    intent.putExtra("filestr", src);
+                    intent.putExtra("filepath", path);
                     intent.putExtra("id", strtext);
                     intent.putExtra("des", formDes);
                     intent.putExtra("title", formtitle);
                     startActivity(intent);
                 }
                 break;
+        }
+    }
+
+    public String getRealPathFromURI(Context context, Uri contentUri) {
+        Cursor cursor = null;
+        try {
+            String[] proj = { MediaStore.Images.Media.DATA };
+            cursor = context.getContentResolver().query(contentUri,  proj, null, null, null);
+            int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+            cursor.moveToFirst();
+            return cursor.getString(column_index);
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
         }
     }
 

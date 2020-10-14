@@ -189,23 +189,31 @@ public class FormActivity extends AppCompatActivity   {
 
 
         getfile = intent.getStringExtra("filestr");
+
         if(getfile != null){
-            galleryUri = Uri.parse(getIntent().getStringExtra("filepath"));
-            try {
-                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), galleryUri);
+
+//            galleryUri = Uri.parse(getIntent().getStringExtra("filepath"));
+            String galleryUri = intent.getStringExtra("filepath");
+
+//            try {
+//                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), galleryUri);
+                BitmapFactory.Options options = new BitmapFactory.Options();
+                options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+                Bitmap bitmap = BitmapFactory.decodeFile(galleryUri, options);
+//                bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(galleryUri));
                 elementPhotos.put(elementCameraId, bitmap);
                 String image = "data:image/png;base64," + toBase64(bitmap);
+
                 elementPhotos_send.put(elementCameraId, image);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            element_filePath.put(elementCameraId, getfile);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            element_filePath.put(elementCameraId, getfile);
         }
 
         //get max pagenumber.
         ArrayList<String> groupkeyList = new ArrayList<String>();
         cursor = db.rawQuery("SELECT *FROM " + ElementDatabaseHelper.ElEMENTTABLE_NAME + " WHERE " + ElementDatabaseHelper.ECOL_11 + "=?", new String[]{formid});
-        Log.i("ok", formid);
         if (cursor.moveToFirst()){
             do{
                 String keydate = cursor.getString(cursor.getColumnIndex("element_page_number"));
