@@ -33,7 +33,7 @@ import static com.austraila.online_anytime.activitys.cameraActivity.CameraActivi
 
 public class AddPhotoBottomDialogFragment extends BottomSheetDialogFragment{
     TextView photoIcon, localIcon;
-    String strtext,formDes,formtitle, elementId;
+    String strtext,formDes,formtitle, elementId, checkpage;
 
     public static AddPhotoBottomDialogFragment newInstance() {
         return new AddPhotoBottomDialogFragment();
@@ -45,6 +45,7 @@ public class AddPhotoBottomDialogFragment extends BottomSheetDialogFragment{
         strtext = getArguments().getString("id");
         formDes = getArguments().getString("formDes");
         formtitle = getArguments().getString("formtitle");
+        checkpage = getArguments().getString("checkpage");
         View view = inflater.inflate(R.layout.layout_photo_bottom_sheet, container,false);
         photoIcon = view.findViewById(R.id.tv_btn_add_photo_camera);
         localIcon = view.findViewById(R.id.tv_btn_add_photo_gallery);
@@ -57,6 +58,7 @@ public class AddPhotoBottomDialogFragment extends BottomSheetDialogFragment{
                 intent.putExtra("id", strtext);
                 intent.putExtra("des", formDes);
                 intent.putExtra("title", formtitle);
+                intent.putExtra("checkpage", checkpage);
                 startActivity(intent);
                 dismiss();
             }
@@ -102,6 +104,7 @@ public class AddPhotoBottomDialogFragment extends BottomSheetDialogFragment{
                     intent.putExtra("id", strtext);
                     intent.putExtra("des", formDes);
                     intent.putExtra("title", formtitle);
+                    intent.putExtra("checkpage", checkpage);
                     startActivity(intent);
                 }
                 break;

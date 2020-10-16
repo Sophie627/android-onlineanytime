@@ -621,6 +621,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 intent.putExtra("id", listFormId.get(position));
                 intent.putExtra("des", listFormDes.get(position));
                 intent.putExtra("title", listFormtitle.get(position));
+                intent.putExtra("checkpage", "1");
                 startActivity(intent);
             }
         });

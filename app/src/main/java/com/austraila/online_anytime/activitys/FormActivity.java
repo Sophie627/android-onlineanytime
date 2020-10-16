@@ -125,6 +125,8 @@ public class FormActivity extends AppCompatActivity   {
         setContentView(R.layout.activity_formtest);
         getSupportActionBar().hide();
 
+        checkpage = Integer.parseInt(getIntent().getStringExtra("checkpage"));
+
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) ==
                 PackageManager.PERMISSION_GRANTED) {
         }
@@ -997,6 +999,7 @@ public class FormActivity extends AppCompatActivity   {
                 bundle.putString("id", formid);
                 bundle.putString("formDes", formDes);
                 bundle.putString("formtitle", formtitle);
+                bundle.putString("checkpage", Integer.toString(checkpage));
                 elementCameraId = "file" + "[element_" + id + "]";
                 AddPhotoBottomDialogFragment addPhotoBottomDialogFragment = AddPhotoBottomDialogFragment.newInstance();
                 addPhotoBottomDialogFragment.setArguments(bundle);
